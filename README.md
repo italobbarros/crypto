@@ -11,15 +11,15 @@
 | None | --decrypt_file | string | Path containing file with hex string to decrypt
 
 > [!INFO]
-> python .\cryto.py --key "keyArgumentValid" --encrypt_file "text.txt" --decrypt_file "encrypted_text.txt"
+> python .\app.py --key "keyArgumentValid" --encrypt_file "text.txt" --decrypt_file "encrypted_text.txt"
 
-equal is
+equal a
 
-> python .\cryto.py --key "keyArgumentValid" 
+> python .\app.py --key "keyArgumentValid" 
 
 Using text in command line for encrypt:
 
-> python .\cryto.py --key "keyArgumentValid" -e "encrypt this text!"
+> python .\app.py --key "keyArgumentValid" -e "encrypt this text!"
 
 Result:
 
@@ -27,7 +27,7 @@ Result:
 
 Using hex in command line for decrypt:
 
-> python .\cryto.py --key "keyArgumentValid" -d "ef1010cb4b381d77aeb9d3fbff524e72c52323de08138968fdb7876658781102"
+> python .\app.py --key "keyArgumentValid" -d "ef1010cb4b381d77aeb9d3fbff524e72c52323de08138968fdb7876658781102"
 
 Result:
 
