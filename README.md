@@ -10,7 +10,7 @@
 | None | --encrypt_file | string | Path containing file with string to encrypt
 | None | --decrypt_file | string | Path containing file with hex string to decrypt
 
-> [!INFO]
+## Without Docker
 > python .\app.py --key "keyArgumentValid" --encrypt_file "text.txt" --decrypt_file "encrypted_text.txt"
 
 equal a
@@ -32,3 +32,14 @@ Using hex in command line for decrypt:
 Result:
 
 > b'encrypt this text!'
+
+## With Docker
+
+### Build a docker image
+> docker build -t crypto:0.1 .
+
+### Run a docker container
+> docker run -d -t --name crypto -it crypto:0.1
+
+### Run command in docker container
+> docker exec b59f3486b44a python app.py --key "keyArgumentValid" -e "encrypt this text!"
