@@ -8,9 +8,9 @@ class crypto_aes():
     def __init__(self):
         self.BLOCK_SIZE = 32  # Bytes
         self.key = None 
-        self.path_text_file = 'text.txt'
+        self.path_text_file = 'files/text.txt'
         self.text=None
-        self.path_decrypt_file = 'encrypted_text.txt'
+        self.path_decrypt_file = 'files/encrypted_text.txt'
         self.decrypt_text = None
         self.get_parameters()
 
@@ -73,6 +73,7 @@ class crypto_aes():
             self.text = file.read()
         msg = self.encrypt(key)
         self.write_file(msg,path_encrypt)
+        print("Encripted file!")
         return msg
 
     def decrypt(self, key: str):
@@ -89,6 +90,7 @@ class crypto_aes():
     def decrypt_file(self,path: str, key: str):
         with open(path, 'r', encoding='utf-8') as file:
             self.decrypt_text = file.read().replace("\n", "")
+        print("Decripted file!")
         return self.decrypt(key)
 
     def run_encrypt(self):
@@ -99,11 +101,10 @@ class crypto_aes():
                 self.encrypt_file(self.path_text_file,self.path_decrypt_file,self.key)
 
     def run_decrypt(self):
-        if(self.text is None):
-            if(self.decrypt_text is not None):
-                print(self.decrypt(self.key))
-            else:
-                print(self.decrypt_file(self.path_decrypt_file,self.key))
+        if(self.decrypt_text is not None and self.text is None):
+            print(self.decrypt(self.key))
+        else:
+            print(self.decrypt_file(self.path_decrypt_file,self.key))
 
 
 
