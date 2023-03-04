@@ -7,8 +7,8 @@
 | -k | --key | string | key used for encrypt your data
 | -e | --encrypt_text | string | text to go use for encrypt
 | -d | --decrypt_text | string | hex string used for decrypt
-| None | --encrypt_file | string | path with contain on text to go use for encrypt
-| None | --decrypt_file | string | path with contain on hex string used for decrypt
+| None | --encrypt_file | string | Path containing file with string to encrypt
+| None | --decrypt_file | string | Path containing file with hex string to decrypt
 
 > [!INFO]
 > python .\cryto.py --key "keyArgumentValid" --encrypt_file "text.txt" --decrypt_file "encrypted_text.txt"
