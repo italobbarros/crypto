@@ -8,9 +8,9 @@ class crypto_aes():
     def __init__(self):
         self.BLOCK_SIZE = 32  # Bytes
         self.key = None 
-        self.path_text_file = 'files/text.txt'
+        self.path_text_file = None #'files/text.txt'
         self.text=None
-        self.path_decrypt_file = 'files/encrypted_text.txt'
+        self.path_decrypt_file = None #'files/encrypted_text.txt'
         self.decrypt_text = None
         self.get_parameters()
 
@@ -94,14 +94,14 @@ class crypto_aes():
         return self.decrypt(key)
 
     def run_encrypt(self):
-        if(self.decrypt_text is None):
+        if(self.decrypt_text is None and self.path_text_file is not None):
             if(self.text is not None):
                 print("hex: "+self.encrypt(self.key).hex())
             else:
                 self.encrypt_file(self.path_text_file,self.path_decrypt_file,self.key)
 
     def run_decrypt(self):
-        if(self.decrypt_text is not None and self.text is None):
+        if(self.decrypt_text is not None and self.text is None and self.path_decrypt_file is not None):
             print(self.decrypt(self.key))
         else:
             print(self.decrypt_file(self.path_decrypt_file,self.key))

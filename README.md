@@ -11,11 +11,14 @@
 | None | --decrypt_file | string | Path containing file with hex string to decrypt
 
 ## Without Docker
-> python app.py --key 'keyArgumentValid' --encrypt_file 'text.txt' --decrypt_file 'encrypted_text.txt'
+> python app.py --key 'keyArgumentValid' --encrypt_file 'files/text.txt' --decrypt_file 'files/encrypted_text.txt'
 
-equal a
+or (only encrypt file)
+> python app.py --key 'keyArgumentValid' --encrypt_file 'files/text.txt'
 
-> python app.py --key 'keyArgumentValid' 
+or (only decrypt file)
+> python app.py --key 'keyArgumentValid' --decrypt_file 'files/encrypted_text.txt'
+
 
 Using text in command line for encrypt:
 
